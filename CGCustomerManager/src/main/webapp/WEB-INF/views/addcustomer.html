@@ -1,0 +1,42 @@
+<html !DOCTYPE
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/dashboardLayout.html}">
+<head>
+    <title>Add Customer</title>
+</head>
+<body>
+<div layout:fragment = "layoutsectionmain">
+    <div class="col-lg-8" >
+        <form th:action="@{/create-customer}" th:object="${customer}" method="post">
+            <div class="text-danger" th:if="${#fields.hasAnyErrors()}">
+                <p th:each="err : ${#fields.allErrors()}" th:text="${err}" ></p>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" th:field="*{email}" class="form-control" id="email" >
+                <p th:if="${#fields.hasErrors('email')}" th:errorclass="text-danger" th:errors="*{email}" ></p>
+
+            </div>
+            <div class="form-group">
+                <label for="firstname">First Name:</label>
+                <input type="text" th:field="*{firstName}" class="form-control" id="firstname" >
+                <p th:if="${#fields.hasErrors('firstName')}" th:errorclass="text-danger" th:errors="*{firstName}" ></p>
+
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name:</label>
+                <input type="text" th:field = "*{lastName}" class="form-control" id="lastname">
+                <p th:if="${#fields.hasErrors('lastName')}" th:errorclass="text-danger" th:errors="*{lastName}" ></p>
+            </div>
+
+
+
+            <button type="submit" class="btn btn-default">Add</button>
+        </form>
+
+    </div>
+
+</div>
+</body>
+</html>

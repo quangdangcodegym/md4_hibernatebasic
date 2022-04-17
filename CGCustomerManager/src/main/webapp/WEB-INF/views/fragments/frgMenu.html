@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>App Fragments</title>
+</head>
+<body>
+<!-- Default Menu -->
+<div class="container-fluid" th:fragment="frgMenu">
+    <div class="col-lg-1">
+    </div>
+    <div class="col-lg-10">
+        <nav class="navbar navbar-default" style="margin-bottom: 10px;margin-top: 10px;">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Customer Manager</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">List</a></li>
+                    <li><a href="#">Add New</a></li>
+                    <li><a href="#">Delete</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="col-lg-1">
+
+    </div>
+</div>
+</body>
+</html>
